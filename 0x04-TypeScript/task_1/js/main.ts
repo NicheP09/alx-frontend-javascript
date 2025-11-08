@@ -46,7 +46,7 @@ function printTeacher({
 }
 
 // Example usage
-console.log(printTeacher('Emeka', 'Junior'));
+console.log(printTeacher({ firstName: 'Emeka', lastName: 'Junior' }));
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
