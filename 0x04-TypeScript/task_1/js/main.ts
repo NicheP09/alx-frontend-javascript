@@ -34,14 +34,10 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (
-  firstName: string,
-  lastName: string
-): string => {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
-console.log(printTeacher('Emeka', 'Junior'));
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
@@ -50,7 +46,7 @@ interface StudentClassInterface {
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
-
+// 6. StudentClass implementation (REQUIRED EXACT NAME)
 class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
@@ -68,7 +64,3 @@ class StudentClass implements StudentClassInterface {
     return this.firstName;
   }
 }
-
-const student: StudentClassInterface = new StudentClass('Emeka', 'Junior');
-console.log(student.displayName());
-console.log(student.workOnHomework());
