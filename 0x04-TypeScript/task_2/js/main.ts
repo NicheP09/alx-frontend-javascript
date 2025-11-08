@@ -50,7 +50,7 @@ const employee3 = createEmployee('$500');
 type Subjects = 'Math' | 'History';
 
 // Declarative function with typed parameter
-function teachClass(todayClass: Subjects): string {
+function teachClass(todayClass:Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
   } else {
