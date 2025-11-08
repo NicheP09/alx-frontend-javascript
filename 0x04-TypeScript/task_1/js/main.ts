@@ -31,19 +31,16 @@ const director1: Director = {
 console.log(director1);
 
 interface printTeacherFunction {
-  (teacher: { firstName: string; lastName: string }): string;
+  (firstName: string, lastName: string): string;
 }
 
-function printTeacher({
-  firstName,
-  lastName,
-}: {
-  firstName: string;
-  lastName: string;
-}): string {
+// Declarative function with 2 string parameters
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName}. ${lastName}`;
 }
 
+// Example usage
+console.log(printTeacher('Emeka', 'Junior'));
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
