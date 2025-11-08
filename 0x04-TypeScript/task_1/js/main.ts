@@ -17,11 +17,11 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-interface Directors extends Teacher {
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'Jane',
   lastName: 'Smith',
   fullTimeEmployee: true,
@@ -34,13 +34,14 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-function printTeacher(firstName: string, lastName: string): string {
+const printTeacher: printTeacherFunction = (
+  firstName: string,
+  lastName: string
+): string => {
   return `${firstName.charAt(0)}. ${lastName}`;
-}
+};
 
-const printTeacherInstance: printTeacherFunction = printTeacher;
-console.log(printTeacherInstance('Emeka', 'Junior'));
-
+console.log(printTeacher('Emeka', 'Junior'));
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
@@ -53,13 +54,16 @@ interface StudentConstructor {
 class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
+
   constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
+
   workOnHomework(): string {
     return 'Currently working';
   }
+
   displayName(): string {
     return this.firstName;
   }
