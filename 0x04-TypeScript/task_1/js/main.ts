@@ -35,15 +35,9 @@ interface printTeacherFunction {
 }
 
 // Declarative function with destructured parameter
-function printTeacher({
-  firstName,
-  lastName,
-}: {
-  firstName: string;
-  lastName: string;
-}): string {
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
   return `${firstName}. ${lastName}`;
-}
+};
 
 // Example usage
 console.log(printTeacher({ firstName: 'Emeka', lastName: 'Junior' }));
